@@ -19,3 +19,8 @@ console.log(Math.sqrt(16));
 console.log(Math.min(1, 2, 3, 4, 5));
 console.log(Math.max(1, 2, 3, 4, 5));
 console.log((Math.random()*10)+1);
+
+const min = 10;
+const max = 20;
+
+console.log((Math.random()*(max - min + 1))+min)
