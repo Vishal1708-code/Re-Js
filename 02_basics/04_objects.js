@@ -20,12 +20,11 @@
 // console.log(regularUser.Userfullname);
 
 // Singleton object example (not required here)
-// const tinder = new Object(); // Optional singleton
-// tinder.name = "Arjun";
-// tinder.age = 20;
-// tinder.isloggedIn = false;
-// console.log(Object.keys(tinder));
-// console.log(Object.values(tinder)); // ["name", "age", "isloggedIn"]
+const tinder = new Object(); // Optional singleton
+tinder.name = "Arjun";
+tinder.age = 20;
+tinder.isloggedIn = false;
+console.log(tinder);
 
 const regularUser = {
     name: "karan",
@@ -38,11 +37,4 @@ const regularUser = {
     }
 };
 
-console.log(Object.entries(regularUser));
-
-//combining objects
-
-// let obj1 = {1:"a", 2:"b"};
-// let obj2 = {3:"c", 4:"d"};
-// let obj3 ={...obj1, ...obj2};
-// console.log(obj3); // {1: "a", 2: "b", 3: "c", 4: "d"}
+console.log(regularUser.Userfullname);
