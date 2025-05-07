@@ -55,7 +55,7 @@
 
 // let obj1 = {1:"a", 2:"b"};
 // let obj2 = {3:"c", 4:"d"};
-// let obj3 ={...obj1, ...obj2};
+// let obj3 ={...obj1, ...obj2}; // spread operator
 // console.log(obj3); // {1: "a", 2: "b", 3: "c", 4: "d"}
 
 // const course = {

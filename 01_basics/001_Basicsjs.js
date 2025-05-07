@@ -18,13 +18,13 @@
 // const people = ['Alice', 'Bob', 'Charlie', 'David'];
 
 // // Step 2: Destructure to get host and rest of guests
-// const [host, ...guests] = people;
+// const [host, ...guests] = people; // Destructuring the array by using spread operator
 
 // console.log("Host:", host);       // Alice
 // console.log("Guests:", guests);   // ['Bob', 'Charlie', 'David']
 
 // // Step 3: Function to invite people
-// function sendInvites(...names) {
+// function sendInvites(...names) { //   // Using rest operator to gather all names into an array
 //   names.forEach(name => {
 //     console.log(`📨 Invitation sent to ${name}`);
 //   });
@@ -198,3 +198,92 @@
 //destructuring is done using the {} and [] brackets.
 //destructuring is done for arrays : [a,b] = arr;
 //destructuring is done for objects : ({a,b} = obj);
+
+
+//Interview Questions
+
+// Javascript Execution Context
+
+//Execution phase
+//"Memory creation phase-" : Only Memory is created for the variables and functions No calulations take place.
+//"Creation phase"- : 
+//"Phase 1 :-"Global Execution Context : we will allocate in  'this' key word 
+//"Memory creation phase :-" collect all the variable and put it  with us, and we will take all variable an put equal to undefined.
+//we will understand by example:-
+let num1 = 10;
+let num2 = 20;
+function addTwo(num1, num2){
+    let totol =  num1 + num2;
+    return totol;
+}
+let result = addTwo(num1, num2);
+let result1 = addTwo(10, 20);
+
+/* Execution Context: The environment in which code is evaluated
+
+Memory Phase (Hoisting): JS sets up memory and stores variables/functions
+
+Execution Phase: Code runs line-by-line
+
+Call Stack: Tracks active execution contexts*/
+
+// Now we will see how the program runs in JavaScript.
+// First, a Global Execution Context is created.
+
+// In that, the this keyword is also allocated.
+// In the browser, this refers to the window object.
+
+// Then, a global object is created, and all variables and function declarations are stored in it.
+// At this point, memory is allocated like this (in the memory phase):
+
+// js
+// Copy code
+// num1 = undefined;
+// num2 = undefined;
+// addTwo = function definition;
+// result = undefined;
+// result1 = undefined;
+// Now the code starts executing (execution phase).
+// Line by line:
+
+// num1 = 10
+
+// num2 = 20
+
+// Then addTwo(num1, num2) is called
+
+// When a function is called, a new function execution context is created.
+
+// In that context, a new variable environment is created, and a new execution thread starts running for that function.
+
+// In the memory creation phase of the function:
+
+// js
+// Copy code
+// a = undefined;
+// b = undefined;
+// total = undefined;
+// In the execution phase of the function:
+
+// a = 10, b = 20
+
+// total = a + b → total = 30
+
+// return total → returns 30 to the global context
+
+// After returning the value, the function execution context is destroyed (removed from the stack).
+
+// Back in the global context:
+// result = 30 is stored.
+
+// If you call the function again, the same process repeats:
+
+// New function context
+
+// Memory phase
+
+// Execution phase
+
+// Return value
+
+// Context destroyed
