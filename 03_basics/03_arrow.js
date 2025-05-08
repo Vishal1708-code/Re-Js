@@ -1,16 +1,16 @@
-// let user = {
-//     name : "karan",
-//     age : 20,
-//     hobbies : function(){
-//         console.log(`My name is ${this.name} and ${this.age} years old`);
-//         console.log(this)
-//     }
-// }
+let user = {
+    name : "karan",
+    age : 20,
+    hobbies : function(){
+        console.log(`My name is ${this.name} and ${this.age} years old`);
+        console.log(this)
+    }
+}
 
-// user.name = "karan";
-// user.age = 21;
-// user.hobbies();
-// console.log(this);
+user.name = "karan";
+user.age = 21;
+user.hobbies();
+console.log(this);
 
 // let chai1 =  () => {
 //     let chai1 = "chai";

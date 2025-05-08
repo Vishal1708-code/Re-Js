@@ -5,9 +5,9 @@ while(index < 14){
 }
 
 let myArray = [1, 2, 3, 4, 5];
-
-while(i<5)
+ let i =1;
+while( i<=5)
     {
-    console.log(myArray);
-    
+    console.log(i);
+    i++;
 }
