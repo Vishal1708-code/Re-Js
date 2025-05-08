@@ -6,7 +6,7 @@ while(index < 14){
 
 let myArray = [1, 2, 3, 4, 5];
 
-while()
+while(i<5)
     {
     console.log(myArray);
     
