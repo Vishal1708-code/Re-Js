@@ -37,3 +37,6 @@ const students = [
 
 const value3 = students.filter((student) => student[0] === "Tom");
 console.log(value3);
+
+
+
