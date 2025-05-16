@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom final </title>
+</head>
+<body style = "background-color: #212121; color: #ffff">
+   <ul class="parent">
+    <li>Monday</li>
+   </ul>
+    
+</body>
+<script>
+    function addlanguage(language)
+{
+    let li = document.createElement('li');
+    li.innerHTML = language;
+    li.style.color = 'red';
+    document.querySelector('.parent').appendChild(li);
+}
+   
+addlanguage('Tuesday');
+addlanguage('Wednesday');
+
+function addlanguagebest (language1)
+{
+let li =  document.createElement('li');
+li.appendChild(document.createTextNode(language1));
+document.querySelector('.parent').appendChild(li);
+}
+addlanguagebest('Thursday');
+
+//edit
+const learn = document.querySelector("li:nth-child(2)");
+learn.appendChild(document.createTextNode('Love'));
+//replace 
+const learn1 = document.querySelector("li:nth-child(3)");
+//by createTextnode
+
+const newLi = document.createElement('li');
+newLi.textContent = 'Friday';
+learn1.replaceWith(newLi); // replaces the <li> with a new <li> containing 'Friday'
+
+//remove
+let remove = document.querySelector("li:last-child");
+remove.remove(); // removes the last <li> element
+
+
+</script>
+</html>
