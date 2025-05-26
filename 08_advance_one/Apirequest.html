@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #card {
+      background-color: #fff;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .img img {
+      width: 100%;
+      height: auto;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    #name {
+      font-size: 24px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    #Profile {
+      color: #777;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    #btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="card">
+    <div class="img">
+      <img src="https://images.unsplash.com/photo-1677630988232-0f1a3b4c5d7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="">
+    </div>
+    <div class="content">
+      <h1 id="name">Hitesh</h1>
+      <p id="Profile">My Profile</p>
+      <button id="btn">Follower count</button>
+    </div>
+  </div>
+</body>
+
+<script>
+ 
+    
+    document.getElementById('btn').addEventListener('click',count)
+
+    
+       function count(){
+      const requestUrl = 'https://jsonplaceholder.typicode.com/posts';
+  let xhr = new XMLHttpRequest();
+  xhr.open('GET', requestUrl);
+  xhr.onreadystatechange = function(){
+      console.log(xhr.readyState);
+      if(xhr.readyState === 4){
+          let data = JSON.parse(this.responseText);
+          console.log( data);
+          console.log(data.length); 
+           // will be undefined
+          // Assuming you want to count the number of posts
+          document.getElementById('btn').innerText = `Follower count: ${data.length}`;
+          
+      }
+  }
+  xhr.send();
+  
+
+ }
+    
+   
+  
+</script>
+</html>
+ 
+ 
