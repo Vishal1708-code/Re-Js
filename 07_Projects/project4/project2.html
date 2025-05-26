@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code in Js</title>
+</head>
+<body>
+  <p id="p1">Hello World!</p>
+  <h3 id="p2">Welcome to JS</h3>
+  <button id="bt1">Start</button>
+  <button id="bt2">Stop</button>
+
+  <script>
+    const ch1 = document.getElementById("p1");
+    const bt1 = document.getElementById("bt1");
+    const bt2 = document.getElementById("bt2");
+
+    let intervalid = null;
+    const originalText = ch1.innerHTML;
+
+    function f1() {
+      ch1.innerHTML = "New World";
+    }
+
+    function startInterval() {
+      if (!intervalid) {
+        intervalid = setInterval(f1, 2000); // Start interval only if not already running
+      }
+    }
+
+    function endInterval() {
+      clearInterval(intervalid);
+      intervalid = null;
+      ch1.innerHTML = originalText;
+    }
+
+    bt1.addEventListener('click', startInterval);
+    bt2.addEventListener('click', endInterval);
+  </script>
+</body>
+</html>

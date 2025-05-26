@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code in Js</title>
+</head>
+<body>
+  <p id="p1">Hello World!</p>
+  <h3 id="p2">Welcome to JS</h3>
+  <button id="bt1">Start</button>
+  <button id="bt2">Stop</button>
+
+  <script>
+    let clearInterval1;
+    let intervalid = null;
+   const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+if(!intervalid){
+    function startingColor(){
+    clearInterval1 = setInterval(changebgcolor, 2000);
+
+}
+}
+
+function changebgcolor(){
+    document.body.style.backgroundColor = randomColor();
+}
+
+function stopcolor(){
+    clearInterval(clearInterval1);
+    clearInterval1 = null;
+    document.body.style.backgroundColor = "white";
+    document.querySelector('#p1').innerHTML = "TASK COMPLETE!";
+
+   
+}
+
+
+
+ document.querySelector('#bt1').addEventListener('click',startingColor);
+ document.querySelector('#bt2').addEventListener('click',stopcolor);
+  </script>
+</body>
+</html>
