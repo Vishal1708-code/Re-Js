@@ -27,7 +27,7 @@ let courses = [
 ];
 
 const totalprice = courses.reduce(  (accumulator,currentValue) => 
-   accumulator + currentValue.price,0
+   accumulator + currentValue.duration,0
     
      
 )

@@ -58,14 +58,14 @@
 // let obj3 ={...obj1, ...obj2}; // spread operator
 // console.log(obj3); // {1: "a", 2: "b", 3: "c", 4: "d"}
 
-// const course = {
-//     CouseName: "JavaScript",
-//     price: 199,
-//     isPaid: true,
-// }
+const course = {
+    CouseName: "JavaScript",
+    price: 199,
+    isPaid: true,
+}
 
 // const{price} = course;// destructuring
 // console.log(price); // 199
 
 
-
+let ({id,...idname} = course)
